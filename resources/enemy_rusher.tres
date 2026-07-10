@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_data.gd" id="1_k7l8m"]
+
+[resource]
+script = ExtResource("1_k7l8m")
+display_name = "疾行者"
+behavior = 2
+base_health = 8.0
+base_speed = 160.0
+damage = 5.0
+xp_drop = 2.0
+contact_cooldown = 0.6
+collision_radius = 8.0
+draw_color = Color(0.2, 0.8, 0.3, 1.0)
+draw_color_inner = Color(0.1, 0.6, 0.2, 1.0)
+explosion_radius = 80.0
+explosion_damage = 30.0
