@@ -1,0 +1,170 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsvb2c4htvu8t"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_k7l8m"]
+[ext_resource type="Script" path="res://scripts/bg_drawer.gd" id="2_bg_drawer"]
+[ext_resource type="Texture2D" path="res://assets/textures/menu_background.jpg" id="3_bg_img"]
+
+[sub_resource type="StyleBoxFlat" id="ButtonNormalStyle"]
+bg_color = Color(0.55, 0.12, 0.05, 0.85)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.3, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="ButtonHoverStyle"]
+bg_color = Color(0.75, 0.18, 0.08, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.5, 0.2, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="ButtonPressedStyle"]
+bg_color = Color(0.4, 0.08, 0.03, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.2, 0.05, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Menu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_k7l8m")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+texture = ExtResource("3_bg_img")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+script = ExtResource("2_bg_drawer")
+
+[node name="VignetteTop" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 280.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="VignetteBottom" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="TitleLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -380.0
+offset_right = 700.0
+offset_bottom = -220.0
+text = "末  日  生  存"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.98, 0.25, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0.15, 0.02, 0.01, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 128
+
+[node name="Subtitle" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -220.0
+offset_right = 450.0
+offset_bottom = -160.0
+text = "APOCALYPSE  ·  SURVIVAL"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.85, 0.7, 0.5, 0.9)
+theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 4
+theme_override_colors/font_outline_color = Color(0.1, 0.02, 0.01, 0.8)
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 240.0
+offset_right = 180.0
+offset_bottom = 320.0
+text = "开 始 游 戏"
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(1, 0.95, 0.85, 1)
+theme_override_colors/font_outline_color = Color(0.2, 0.05, 0.02, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/normal = SubResource("ButtonNormalStyle")
+theme_override_styles/hover = SubResource("ButtonHoverStyle")
+theme_override_styles/pressed = SubResource("ButtonPressedStyle")
+
+[node name="ControlsLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = 360.0
+offset_right = 450.0
+offset_bottom = 410.0
+text = "WASD / 方向键移动  ·  自动攻击  ·  ESC 退出"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.85, 0.8, 0.7, 0.95)
+theme_override_font_sizes/font_size = 20
+theme_override_constants/outline_size = 3
+theme_override_colors/font_outline_color = Color(0.1, 0.02, 0.01, 0.8)
+
+[node name="CreditLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = 680.0
+offset_right = 400.0
+offset_bottom = 710.0
+text = "Powered by Godot Engine"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.5, 0.4, 0.35, 0.7)
+theme_override_font_sizes/font_size = 14
