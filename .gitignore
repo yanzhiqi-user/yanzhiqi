@@ -1,0 +1,31 @@
+# Godot 4+ .gitignore
+
+# Godot-specific (must-ignore)
+.godot/
+
+# Build outputs
+export/
+export_templates/
+web_export/
+pages-push/
+build/
+android/build/
+
+# WorkBuddy workspace memory (local only)
+.workbuddy/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary / cache
+*.tmp
+*.log
