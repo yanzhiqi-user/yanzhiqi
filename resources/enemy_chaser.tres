@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_data.gd" id="1_k7l8m"]
+
+[resource]
+script = ExtResource("1_k7l8m")
+display_name = "追猎者"
+behavior = 0
+base_health = 20.0
+base_speed = 80.0
+damage = 10.0
+xp_drop = 5.0
+contact_cooldown = 1.0
+collision_radius = 14.0
+draw_color = Color(0.9, 0.2, 0.2, 1.0)
+draw_color_inner = Color(0.7, 0.1, 0.1, 1.0)
+explosion_radius = 80.0
+explosion_damage = 30.0
